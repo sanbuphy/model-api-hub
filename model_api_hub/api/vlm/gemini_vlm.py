@@ -4,9 +4,12 @@ Google Gemini Vision API wrapper.
 Provides interface for Gemini's vision-language models:
 - gemini-1.5-pro - Gemini 1.5 Pro (multimodal)
 - gemini-1.5-flash - Gemini 1.5 Flash (multimodal)
+
+Migration: Updated to use google.genai (new SDK) instead of deprecated google.generativeai
 """
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from typing import Optional
 import sys
 from pathlib import Path
@@ -19,35 +22,30 @@ DEFAULT_MODEL: str = "gemini-1.5-pro"
 API_KEY: Optional[str] = None
 
 
-def create_client(api_key: Optional[str] = None):
+def create_client(api_key: Optional[str] = None) -> genai.Client:
     """Create Gemini client."""
     if api_key is None:
         api_key = get_api_key("gemini")
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel(DEFAULT_MODEL)
+    return genai.Client(api_key=api_key)
 
 
 def analyze_image(
     image_path: str,
     prompt: str = "What's in this image?",
     api_key: Optional[str] = None,
-    model_name: str = DEFAULT_MODEL,
+    model: str = DEFAULT_MODEL,
     **kwargs
 ) -> str:
     """Analyze image using Gemini VLM."""
-    if api_key is None:
-        api_key = get_api_key("gemini")
-    genai.configure(api_key=api_key)
+    client = create_client(api_key)
     
-    model = genai.GenerativeModel(model_name)
+    # Upload image file
+    image_file = client.files.upload(file=image_path)
     
-    # Load image
-    with open(image_path, "rb") as f:
-        image_data = f.read()
-    
-    response = model.generate_content(
-        [prompt, {"mime_type": "image/jpeg", "data": image_data}],
-        **kwargs
+    response = client.models.generate_content(
+        model=model,
+        contents=[prompt, image_file],
+        config=types.GenerateContentConfig(**kwargs)
     )
     return response.text
 
@@ -60,10 +58,6 @@ def main():
     parser.add_argument("--prompt", default="What's in this image?", help="Prompt for image analysis")
     parser.add_argument("--api-key", help="Gemini API key")
     args = parser.parse_args()
-    
-    if args.api_key:
-        global API_KEY
-        API_KEY = args.api_key
     
     response = analyze_image(args.image, args.prompt, api_key=args.api_key)
     print("Response:")

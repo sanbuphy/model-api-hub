@@ -40,7 +40,8 @@ def load_config(config_path: str = "config.yaml") -> Dict[str, Any]:
     """
     config_file = Path(config_path)
     if not config_file.exists():
-        raise FileNotFoundError(f"Configuration file not found: {config_path}")
+        # Return empty config if file not found (API keys can be loaded from env)
+        return {}
 
     with open(config_file, "r", encoding="utf-8") as f:
         return yaml.safe_load(f) or {}
@@ -111,18 +112,38 @@ class ConfigManager:
     Configuration manager class for handling multiple configuration sources.
     """
 
-    def __init__(self, config_path: str = "config.yaml", env_path: Optional[str] = None):
+    def __init__(self, config_path: Optional[str] = None, env_path: Optional[str] = None):
         """
         Initialize configuration manager.
 
         Args:
-            config_path: Path to YAML configuration file.
+            config_path: Path to YAML configuration file. If None, searches in common locations.
             env_path: Optional path to .env file.
         """
-        self.config_path = config_path
+        self.config_path = config_path or self._find_config_path()
         self.env_path = env_path
         self._config: Optional[Dict[str, Any]] = None
         load_env(env_path)
+
+    def _find_config_path(self) -> str:
+        """Find config.yaml in common locations."""
+        # Get the directory of this file (config.py)
+        current_dir = Path(__file__).parent.parent.parent.parent
+        
+        # Possible config locations
+        possible_paths = [
+            current_dir / "config.yaml",
+            current_dir / "config.example.yaml",
+            Path.cwd() / "config.yaml",
+            Path.cwd() / "config.example.yaml",
+        ]
+        
+        for path in possible_paths:
+            if path.exists():
+                return str(path)
+        
+        # Return default if not found (will raise FileNotFoundError when accessed)
+        return str(current_dir / "config.yaml")
 
     @property
     def config(self) -> Dict[str, Any]:

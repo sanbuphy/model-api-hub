@@ -14,15 +14,13 @@ Quick start:
 
 __version__ = "0.1.0"
 
-# LLM
+# LLM - Synchronous
 from model_api_hub.api.llm.deepseek_llm import chat as deepseek_chat
 from model_api_hub.api.llm.siliconflow_llm import chat as siliconflow_chat
 from model_api_hub.api.llm.zhipuai_llm import chat as zhipuai_chat
 from model_api_hub.api.llm.kimi_llm import chat as kimi_chat
 from model_api_hub.api.llm.yiyan_llm import chat as yiyan_chat
 from model_api_hub.api.llm.minimax_llm import chat as minimax_chat
-
-# New LLM providers
 from model_api_hub.api.llm.openai_llm import chat as openai_chat
 from model_api_hub.api.llm.gemini_llm import chat as gemini_chat
 from model_api_hub.api.llm.dashscope_llm import chat as dashscope_chat
@@ -32,6 +30,10 @@ from model_api_hub.api.llm.together_llm import chat as together_chat
 from model_api_hub.api.llm.cohere_llm import chat as cohere_chat
 from model_api_hub.api.llm.mistral_llm import chat as mistral_chat
 from model_api_hub.api.llm.modelscope_llm import chat as modelscope_chat
+
+# LLM - Streaming
+from model_api_hub.api.llm.deepseek_llm import chat_stream as deepseek_chat_stream
+from model_api_hub.api.llm.openai_llm import chat_stream as openai_chat_stream
 
 # VLM
 from model_api_hub.api.vlm.siliconflow_vlm import analyze_image as siliconflow_analyze_image
@@ -77,7 +79,7 @@ __all__ = [
     # Version
     "__version__",
 
-    # LLM
+    # LLM - Synchronous
     "deepseek_chat",
     "siliconflow_chat",
     "zhipuai_chat",
@@ -93,6 +95,10 @@ __all__ = [
     "cohere_chat",
     "mistral_chat",
     "modelscope_chat",
+
+    # LLM - Streaming
+    "deepseek_chat_stream",
+    "openai_chat_stream",
 
     # VLM
     "siliconflow_analyze_image",

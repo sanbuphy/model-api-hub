@@ -7,12 +7,12 @@ Available providers:
 - dreamina_gen - Dreamina (即梦) Video
 """
 
-from .runway_gen import text_to_video as runway_text_to_video
-from .luma_gen import text_to_video as luma_text_to_video
-from .dreamina_gen import text_to_video as dreamina_text_to_video
+from .runway_gen import generate_video as runway_generate_video
+from .luma_gen import generate_video as luma_generate_video
+from .dreamina_gen import generate_video as dreamina_generate_video
 
 __all__ = [
-    "runway_text_to_video",
-    "luma_text_to_video",
-    "dreamina_text_to_video",
+    "runway_generate_video",
+    "luma_generate_video",
+    "dreamina_generate_video",
 ]

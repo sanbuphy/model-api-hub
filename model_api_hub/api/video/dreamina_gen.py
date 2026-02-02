@@ -122,6 +122,10 @@ def text_to_video(
         return False
 
 
+# Alias for consistent API
+generate_video = text_to_video
+
+
 def main():
     """Demo usage."""
     import argparse

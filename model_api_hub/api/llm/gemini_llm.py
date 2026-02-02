@@ -5,9 +5,12 @@ Provides interface for Google's Gemini language models:
 - gemini-1.5-pro - Gemini 1.5 Pro
 - gemini-1.5-flash - Gemini 1.5 Flash
 - gemini-1.0-pro - Gemini 1.0 Pro
+
+Migration: Updated to use google.genai (new SDK) instead of deprecated google.generativeai
 """
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 from typing import Dict, Any, List, Optional
 import sys
 from pathlib import Path
@@ -20,29 +23,31 @@ DEFAULT_MODEL: str = "gemini-1.5-pro"
 API_KEY: Optional[str] = None
 
 
-def create_client(api_key: Optional[str] = None) -> genai.GenerativeModel:
+def create_client(api_key: Optional[str] = None) -> genai.Client:
     """Create Gemini client."""
     if api_key is None:
         api_key = get_api_key("gemini")
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel(DEFAULT_MODEL)
+    return genai.Client(api_key=api_key)
 
 
 def get_completion(
-    model: genai.GenerativeModel,
+    client: genai.Client,
     prompt: str,
+    model: str = DEFAULT_MODEL,
     system_prompt: Optional[str] = None,
     temperature: float = 0.7,
     max_tokens: int = 4096,
     **kwargs
 ) -> str:
     """Request completion from Gemini LLM."""
+    contents = prompt
     if system_prompt:
-        prompt = f"{system_prompt}\n\n{prompt}"
+        contents = f"{system_prompt}\n\n{prompt}"
     
-    response = model.generate_content(
-        prompt,
-        generation_config=genai.types.GenerationConfig(
+    response = client.models.generate_content(
+        model=model,
+        contents=contents,
+        config=types.GenerateContentConfig(
             temperature=temperature,
             max_output_tokens=max_tokens,
             **kwargs
@@ -55,28 +60,29 @@ def chat(
     prompt: str,
     system_prompt: Optional[str] = None,
     api_key: Optional[str] = None,
-    model_name: str = DEFAULT_MODEL,
+    model: str = DEFAULT_MODEL,
     **kwargs
 ) -> str:
     """Quick chat function."""
-    if api_key is None:
-        api_key = get_api_key("gemini")
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(model_name)
-    return get_completion(model, prompt, system_prompt=system_prompt, **kwargs)
+    client = create_client(api_key)
+    return get_completion(client, prompt, model=model, system_prompt=system_prompt, **kwargs)
 
 
-def main() -> None:
+def main(api_key: Optional[str] = None) -> None:
     """Demo usage."""
-    config_mgr = ConfigManager()
-    llm_config = config_mgr.get_llm_config("gemini")
+    try:
+        config_mgr = ConfigManager()
+        llm_config = config_mgr.get_llm_config("gemini")
+    except Exception:
+        llm_config = {}
+    
     model_name = llm_config.get("model", DEFAULT_MODEL)
     
-    model = create_client()
+    client = create_client(api_key)
     prompt = "Hello! What can you do?"
     
     print(f"Sending request to Gemini model: {model_name}")
-    response = get_completion(model, prompt)
+    response = get_completion(client, prompt, model=model_name)
     print("Response:")
     print(response)
 
@@ -87,6 +93,4 @@ if __name__ == "__main__":
     parser.add_argument("--api-key", type=str, help="Gemini API key")
     args = parser.parse_args()
     
-    if args.api_key:
-        API_KEY = args.api_key
-    main()
+    main(api_key=args.api_key)

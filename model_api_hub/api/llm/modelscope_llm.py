@@ -6,17 +6,20 @@ API Docs: https://www.modelscope.cn/docs/model-service/API-Inference/intro
 API Key: https://www.modelscope.cn/my/mynotebook/authorization
 Pricing: 每日免费 2000 次调用（单个模型每日上限 500 次）
 
-Available Models:
-- Qwen series: qwen-max, qwen-plus, qwen-turbo, qwen2.5-72b, qwen2.5-32b, qwen2.5-14b, qwen2.5-7b
-- Llama series: llama3.1-70b, llama3.1-8b, llama3-70b, llama3-8b
-- DeepSeek: deepseek-v3, deepseek-r1
-- GLM: glm-4, glm-4-plus
-- Other: yi-large, baichuan2-13b, chatglm3-6b
+Available Models (使用 ModelScope 模型 ID 格式):
+- Qwen series: Qwen/Qwen2.5-Max, Qwen/Qwen2.5-Plus, Qwen/Qwen2.5-Turbo,
+                Qwen/Qwen2.5-72B-Instruct, Qwen/Qwen2.5-32B-Instruct,
+                Qwen/Qwen2.5-14B-Instruct, Qwen/Qwen2.5-7B-Instruct
+- Llama series: LLM-Research/Llama-3.1-70B-Instruct, LLM-Research/Llama-3.1-8B-Instruct
+- DeepSeek: deepseek-ai/DeepSeek-V3, deepseek-ai/DeepSeek-R1
+- GLM: ZhipuAI/glm-4-9b-chat, ZhipuAI/glm-4-plus
 
 Quick Start:
 1. 访问 https://www.modelscope.cn/my/mynotebook/authorization
 2. 获取 SDK Token 作为 API Key
 3. 参考文档: https://www.modelscope.cn/docs/model-service/API-Inference/intro
+
+Note: ModelScope 使用完整的模型 ID 路径，如 "Qwen/Qwen2.5-Max"
 """
 
 from openai import OpenAI
@@ -30,7 +33,7 @@ from model_api_hub.utils.config import get_api_key, ConfigManager
 
 # Default configuration
 DEFAULT_BASE_URL: str = "https://api-inference.modelscope.cn/v1"
-DEFAULT_MODEL: str = "qwen-max"
+DEFAULT_MODEL: str = "Qwen/Qwen2.5-72B-Instruct"
 
 
 def create_client(api_key: Optional[str] = None, base_url: str = DEFAULT_BASE_URL) -> OpenAI:
@@ -117,16 +120,21 @@ def chat(
     return get_completion(client, messages, model=model, **kwargs)
 
 
-def main() -> None:
+def main(api_key: Optional[str] = None) -> None:
     """
     Main function demonstrating usage with config file support.
+    
+    Args:
+        api_key: Optional API key. If None, loads from environment variable.
     """
     # Option 1: Direct API key
-    api_key = None  # Set your API key directly or load from .env
-
-    # Option 2: Use config manager
-    config_mgr = ConfigManager()
-    llm_config = config_mgr.get_llm_config("modelscope")
+    # Option 2: Use config manager (optional, falls back to defaults if no config.yaml)
+    try:
+        config_mgr = ConfigManager()
+        llm_config = config_mgr.get_llm_config("modelscope")
+    except Exception:
+        llm_config = {}
+    
     model = llm_config.get("model", DEFAULT_MODEL)
     max_tokens = llm_config.get("max_tokens", 4096)
     temperature = llm_config.get("temperature", 0.7)
@@ -162,7 +170,4 @@ if __name__ == "__main__":
     parser.add_argument("--api-key", type=str, help="ModelScope API key")
     args = parser.parse_args()
 
-    if args.api_key:
-        main()  # Will use the passed API key
-    else:
-        main()  # Will load from environment
+    main(api_key=args.api_key)  # Will use the passed API key or load from environment

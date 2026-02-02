@@ -68,6 +68,57 @@ def chat(
     return get_completion(client, messages, model=model, **kwargs)
 
 
+def chat_stream(
+    prompt: str,
+    system_prompt: Optional[str] = None,
+    api_key: Optional[str] = None,
+    model: str = DEFAULT_MODEL,
+    max_tokens: int = 4096,
+    temperature: float = 0.7,
+    top_p: float = 1.0,
+    **kwargs
+):
+    """
+    Streaming chat function that yields response chunks as they arrive.
+
+    Args:
+        prompt: User prompt text.
+        system_prompt: Optional system prompt.
+        api_key: Optional API key. If None, loads from environment.
+        model: Model name to use.
+        max_tokens: Maximum tokens in response.
+        temperature: Sampling temperature (0-2).
+        top_p: Nucleus sampling threshold (0-1).
+        **kwargs: Additional parameters.
+
+    Yields:
+        str: Response text chunks.
+
+    Example:
+        >>> for chunk in chat_stream("Tell me a story"):
+        ...     print(chunk, end="", flush=True)
+    """
+    client = create_client(api_key=api_key)
+    messages: List[Dict[str, Any]] = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        max_tokens=max_tokens,
+        temperature=temperature,
+        top_p=top_p,
+        stream=True,
+        **kwargs
+    )
+
+    for chunk in response:
+        if chunk.choices and chunk.choices[0].delta.content:
+            yield chunk.choices[0].delta.content
+
+
 def main() -> None:
     """Demo usage."""
     config_mgr = ConfigManager()
