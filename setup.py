@@ -21,7 +21,7 @@ requirements = [
 
 setup(
     name="model-api-hub",
-    version="0.1.0",
+    version="0.1.1",
     author="sanbu",
     author_email="physicoada@gmail.com",
     description="Unified Python interface for multiple AI model APIs",
@@ -33,7 +33,7 @@ setup(
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
