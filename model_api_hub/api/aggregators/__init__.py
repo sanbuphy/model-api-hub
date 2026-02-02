@@ -2,8 +2,52 @@
 API Aggregators / API中转站
 
 提供统一的接口访问多个AI模型提供商。
+
+国内平台 (China):
+- qiniu_ai - 七牛云 AI 大模型广场
+- ppio - PPIO 派欧云
+- coreshub - 基石智算 (青云科技)
+- ucloud_ai - UCloud 优刻得
+- kuaishou_vanchin - 快手万擎
+- ksyun_starflow - 金山云星流
+- infinigence - 无问芯穹
+- lanyun_maas - 蓝耘元生代
+- gitee_moark - 模力方舟 (Gitee)
+- paratera_ai - 并行智算云
+- volcengine_ark - 火山方舟 (字节跳动)
+- sophnet - SophNet (算能科技)
+
+国际平台 (International):
+- openrouter - OpenRouter
+- siliconflow - SiliconFlow
+- poe - Poe
+- ai302 - 302.AI
+- fireworks - Fireworks AI
+- novita - Novita AI
+- groq - Groq
+- together - Together AI
+- anyscale - Anyscale
+- perplexity - Perplexity
+- mistral - Mistral AI
+- cohere - Cohere
+- ai21 - AI21 Labs
 """
 
+# 国内平台
+from .qiniu_ai import chat as qiniu_ai_chat, create_client as qiniu_ai_client
+from .ppio import chat as ppio_chat, create_client as ppio_client
+from .coreshub import chat as coreshub_chat, create_client as coreshub_client
+from .ucloud_ai import chat as ucloud_ai_chat, create_client as ucloud_ai_client
+from .kuaishou_vanchin import chat as kuaishou_vanchin_chat, create_client as kuaishou_vanchin_client
+from .ksyun_starflow import chat as ksyun_starflow_chat, create_client as ksyun_starflow_client
+from .infinigence import chat as infinigence_chat, create_client as infinigence_client
+from .lanyun_maas import chat as lanyun_maas_chat, create_client as lanyun_maas_client
+from .gitee_moark import chat as gitee_moark_chat, create_client as gitee_moark_client
+from .paratera_ai import chat as paratera_ai_chat, create_client as paratera_ai_client
+from .volcengine_ark import chat as volcengine_ark_chat, create_client as volcengine_ark_client
+from .sophnet import chat as sophnet_chat, create_client as sophnet_client
+
+# 国际平台
 from .openrouter import chat as openrouter_chat, create_client as openrouter_client
 from .siliconflow import chat as siliconflow_chat, create_client as siliconflow_client
 from .poe import chat as poe_chat, create_client as poe_client
@@ -19,6 +63,21 @@ from .cohere import chat as cohere_chat, create_client as cohere_client
 from .ai21 import chat as ai21_chat, create_client as ai21_client
 
 __all__ = [
+    # 国内平台
+    "qiniu_ai_chat", "qiniu_ai_client",
+    "ppio_chat", "ppio_client",
+    "coreshub_chat", "coreshub_client",
+    "ucloud_ai_chat", "ucloud_ai_client",
+    "kuaishou_vanchin_chat", "kuaishou_vanchin_client",
+    "ksyun_starflow_chat", "ksyun_starflow_client",
+    "infinigence_chat", "infinigence_client",
+    "lanyun_maas_chat", "lanyun_maas_client",
+    "gitee_moark_chat", "gitee_moark_client",
+    "paratera_ai_chat", "paratera_ai_client",
+    "volcengine_ark_chat", "volcengine_ark_client",
+    "sophnet_chat", "sophnet_client",
+    
+    # 国际平台
     "openrouter_chat", "openrouter_client",
     "siliconflow_chat", "siliconflow_client",
     "poe_chat", "poe_client",
