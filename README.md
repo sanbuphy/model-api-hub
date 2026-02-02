@@ -170,7 +170,121 @@ model-api-hub elevenlabs-tts "Hello world" --output hello.mp3
 
 ---
 
-## 📋 Supported Providers
+## 🎯 Supported Models
+
+Model API Hub supports **500+ AI models** across **25+ providers** and **5 modalities**.
+
+### � Quick Model Reference
+
+<table align="center">
+  <tr>
+    <td valign="top" width="25%">
+      <b>🔥 Hot Models</b><br>
+      • <a href="./support_model.md#deepseek-r1">DeepSeek-R1</a><br>
+      • <a href="./support_model.md#deepseek-v3">DeepSeek-V3</a><br>
+      • <a href="./support_model.md#glm-47">GLM-4.7</a><br>
+      • <a href="./support_model.md#glm-45">GLM-4.5</a><br>
+      • <a href="./support_model.md#qwen3">Qwen3</a><br>
+      • <a href="./support_model.md#qwen25">Qwen2.5</a><br>
+      • <a href="./support_model.md#kimi-k25">Kimi K2.5</a><br>
+      • <a href="./support_model.md#minimax-m2">MiniMax-M2</a><br>
+      • <a href="./support_model.md#ernie-45">ERNIE-4.5</a><br>
+      • <a href="./support_model.md#doubao-pro">Doubao-Pro</a><br>
+      • <a href="./support_model.md#llama-31">Llama-3.1</a><br>
+      • <a href="./support_model.md#gpt-4o">GPT-4o</a><br>
+      • <a href="./support_model.md#claude-35-sonnet">Claude-3.5-Sonnet</a>
+    </td>
+    <td valign="top" width="25%">
+      <b>🇨🇳 Domestic LLM</b><br>
+      • <a href="./support_model.md#deepseek">DeepSeek</a><br>
+      • <a href="./support_model.md#glm">GLM/智谱AI</a><br>
+      • <a href="./support_model.md#qwen">Qwen/通义千问</a><br>
+      • <a href="./support_model.md#kimi">Kimi/月之暗面</a><br>
+      • <a href="./support_model.md#ernie">ERNIE/文心一言</a><br>
+      • <a href="./support_model.md#minimax">MiniMax</a><br>
+      • <a href="./support_model.md#spark">Spark/讯飞星火</a><br>
+      • <a href="./support_model.md#doubao">Doubao/豆包</a><br>
+      • <a href="./support_model.md#baichuan">Baichuan/百川</a><br>
+      • <a href="./support_model.md#yi">Yi/零一万物</a><br>
+      • <a href="./support_model.md#hunyuan">Hunyuan/腾讯混元</a><br>
+      • <a href="./support_model.md#sensechat">SenseChat/商汤</a>
+    </td>
+    <td valign="top" width="25%">
+      <b>🌍 International LLM</b><br>
+      • <a href="./support_model.md#gpt">GPT/OpenAI</a><br>
+      • <a href="./support_model.md#claude">Claude/Anthropic</a><br>
+      • <a href="./support_model.md#gemini">Gemini/Google</a><br>
+      • <a href="./support_model.md#llama">Llama/Meta</a><br>
+      • <a href="./support_model.md#mistral">Mistral AI</a><br>
+      • <a href="./support_model.md#cohere">Cohere</a><br>
+      • <a href="./support_model.md#grok">Grok/xAI</a><br>
+      • <a href="./support_model.md#ai21">AI21 Labs</a><br>
+      • <a href="./support_model.md#perplexity">Perplexity</a><br>
+      • <a href="./support_model.md#together">Together AI</a><br>
+      • <a href="./support_model.md#groq">Groq</a><br>
+      • <a href="./support_model.md#fireworks">Fireworks</a>
+    </td>
+    <td valign="top" width="25%">
+      <b>🎨 Multimodal</b><br>
+      • <a href="./support_model.md#qwen-vl">Qwen-VL</a><br>
+      • <a href="./support_model.md#glm-4v">GLM-4V</a><br>
+      • <a href="./support_model.md#gpt-4v">GPT-4V</a><br>
+      • <a href="./support_model.md#gemini-vision">Gemini Vision</a><br>
+      • <a href="./support_model.md#claude-vision">Claude Vision</a><br>
+      • <a href="./support_model.md#dall-e">DALL-E 3</a><br>
+      • <a href="./support_model.md#stable-diffusion">Stable Diffusion</a><br>
+      • <a href="./support_model.md#midjourney">Midjourney</a><br>
+      • <a href="./support_model.md#whisper">Whisper</a><br>
+      • <a href="./support_model.md#elevenlabs">ElevenLabs</a><br>
+      • <a href="./support_model.md#runway">Runway</a><br>
+      • <a href="./support_model.md#luma">Luma AI</a>
+    </td>
+  </tr>
+</table>
+
+### 🏢 API Aggregators (中转站)
+
+<table align="center">
+  <tr>
+    <td valign="top" width="50%">
+      <b>🇨🇳 Domestic Aggregators</b><br>
+      • <a href="./support_model.md#qiniu-ai">七牛云 AI</a> - 中国版 OpenRouter<br>
+      • <a href="./support_model.md#ppio">PPIO 派欧云</a> - 一站式 AI 云服务<br>
+      • <a href="./support_model.md#coreshub">基石智算</a> - 青云科技 AI 算力<br>
+      • <a href="./support_model.md#ucloud">UCloud 优刻得</a> - 孔明智算平台<br>
+      • <a href="./support_model.md#kuaishou">快手万擎</a> - KAT-Coder 编程模型<br>
+      • <a href="./support_model.md#ksyun">金山云星流</a> - AI 训推全流程<br>
+      • <a href="./support_model.md#infinigence">无问芯穹</a> - 异构算力集群<br>
+      • <a href="./support_model.md#lanyun">蓝耘元生代</a> - 高性能推理<br>
+      • <a href="./support_model.md#gitee">模力方舟</a> - Gitee AI 广场<br>
+      • <a href="./support_model.md#paratera">并行智算云</a> - 模型广场<br>
+      • <a href="./support_model.md#volcengine">火山方舟</a> - 字节 MaaS<br>
+      • <a href="./support_model.md#sophnet">SophNet</a> - 算能科技<br>
+      • <a href="./support_model.md#siliconflow">SiliconFlow</a> - 50+ 开源模型<br>
+      • <a href="./support_model.md#ai302">302.AI</a> - 一站式 AI 服务
+    </td>
+    <td valign="top" width="50%">
+      <b>🌍 International Aggregators</b><br>
+      • <a href="./support_model.md#openrouter">OpenRouter</a> - 200+ 模型统一访问<br>
+      • <a href="./support_model.md#poe">Poe</a> - 多模型聚合平台<br>
+      • <a href="./support_model.md#groq">Groq</a> - 极速推理引擎<br>
+      • <a href="./support_model.md#together">Together AI</a> - 开源模型平台<br>
+      • <a href="./support_model.md#fireworks">Fireworks</a> - 快速推理服务<br>
+      • <a href="./support_model.md#novita">Novita AI</a> - 开源模型 API<br>
+      • <a href="./support_model.md#anyscale">Anyscale</a> - 生产级部署<br>
+      • <a href="./support_model.md#perplexity">Perplexity</a> - 搜索增强 LLM<br>
+      • <a href="./support_model.md#mistral">Mistral AI</a> - 欧洲领先模型<br>
+      • <a href="./support_model.md#cohere">Cohere</a> - 企业级 NLP<br>
+      • <a href="./support_model.md#ai21">AI21 Labs</a> - Jurassic 模型
+    </td>
+  </tr>
+</table>
+
+📖 **Full model documentation**: [support_model.md](./support_model.md)
+
+---
+
+## �📋 Supported Providers by Modality
 
 ### Language Models
 

@@ -5,14 +5,20 @@ Available providers:
 - openai_vlm - OpenAI GPT-4V/GPT-4o
 - gemini_vlm - Google Gemini Vision
 - dashscope_vlm - Alibaba Qwen-VL
+- zhipuai_vlm - ZhipuAI GLM-4V
+- xunfei_vlm - Xunfei Spark Vision
 """
 
 from .openai_vlm import analyze_image as openai_analyze_image
 from .gemini_vlm import analyze_image as gemini_analyze_image
 from .dashscope_vlm import analyze_image as dashscope_analyze_image
+from .zhipuai_vlm import analyze_image as zhipuai_analyze_image
+from .xunfei_vlm import analyze_image as xunfei_analyze_image
 
 __all__ = [
     "openai_analyze_image",
     "gemini_analyze_image",
     "dashscope_analyze_image",
+    "zhipuai_analyze_image",
+    "xunfei_analyze_image",
 ]
