@@ -18,7 +18,7 @@
 
 ---
 
-## ✨ What is Model API Hub?
+## What is Model API Hub?
 
 Model API Hub is a **unified Python SDK** that lets you access multiple AI model APIs across different platforms and modalities with a **consistent, simple interface**.
 
@@ -36,21 +36,21 @@ response = kimi_chat("Hello!")
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
 | Feature | Description |
 |---------|-------------|
-| 🔌 **15+ Providers** | OpenAI, Anthropic, DeepSeek, ZhipuAI, Kimi, SiliconFlow, and more |
-| 🎨 **5 Modalities** | LLM, Vision-Language, Image Gen, Audio TTS, Video Gen |
-| 🚀 **One-Line Setup** | `pip install model-api-hub` and you're ready |
-| 🔄 **Unified API** | Same interface across all providers |
-| ⚙️ **Flexible Config** | `.env`, YAML, or direct API keys |
-| 🛠️ **CLI Included** | Test models directly from command line |
-| 📦 **Zero Dependencies** | Lightweight, only essential packages |
+| **15+ Providers** | OpenAI, Anthropic, DeepSeek, ZhipuAI, Kimi, SiliconFlow, and more |
+| **5 Modalities** | LLM, Vision-Language, Image Gen, Audio TTS, Video Gen |
+| **One-Line Setup** | `pip install model-api-hub` and you're ready |
+| **Unified API** | Same interface across all providers |
+| **Flexible Config** | `.env`, YAML, or direct API keys |
+| **CLI Included** | Test models directly from command line |
+| **Zero Dependencies** | Lightweight, only essential packages |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -77,9 +77,9 @@ print(response)
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
-### 🤖 Language Models (LLM)
+### Language Models (LLM)
 
 ```python
 from model_api_hub import deepseek_chat, kimi_chat, siliconflow_chat
@@ -100,7 +100,7 @@ response = kimi_chat(
 response = siliconflow_chat("Hello!", model="deepseek-ai/DeepSeek-V3")
 ```
 
-### 👁️ Vision-Language Models (VLM)
+### Vision-Language Models (VLM)
 
 ```python
 from model_api_hub import siliconflow_analyze_image
@@ -111,7 +111,7 @@ response = siliconflow_analyze_image(
 )
 ```
 
-### 🎨 Image Generation
+### Image Generation
 
 ```python
 from model_api_hub import siliconflow_text_to_image
@@ -123,7 +123,7 @@ siliconflow_text_to_image(
 )
 ```
 
-### 🔊 Text-to-Speech
+### Text-to-Speech
 
 ```python
 from model_api_hub import elevenlabs_tts
@@ -135,7 +135,7 @@ elevenlabs_tts(
 )
 ```
 
-### 🎬 Video Generation
+### Video Generation
 
 ```python
 from model_api_hub import runway_generate_video
@@ -149,7 +149,7 @@ runway_generate_video(
 
 ---
 
-## 🛠️ Command Line Interface
+## Command Line Interface
 
 ```bash
 # List all available providers
@@ -170,16 +170,16 @@ model-api-hub elevenlabs-tts "Hello world" --output hello.mp3
 
 ---
 
-## 🎯 Supported Models
+## Supported Models
 
 Model API Hub supports **500+ AI models** across **25+ providers** and **5 modalities**.
 
-### � Quick Model Reference
+### Quick Model Reference
 
 <table align="center">
   <tr>
     <td valign="top" width="25%">
-      <b>🔥 Hot Models</b><br>
+      <b>Hot Models</b><br>
       • <a href="./support_model.md#deepseek-r1">DeepSeek-R1</a><br>
       • <a href="./support_model.md#deepseek-v3">DeepSeek-V3</a><br>
       • <a href="./support_model.md#glm-47">GLM-4.7</a><br>
@@ -195,22 +195,22 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
       • <a href="./support_model.md#claude-35-sonnet">Claude-3.5-Sonnet</a>
     </td>
     <td valign="top" width="25%">
-      <b>🇨🇳 Domestic LLM</b><br>
+      <b>Domestic LLM</b><br>
       • <a href="./support_model.md#deepseek">DeepSeek</a><br>
-      • <a href="./support_model.md#glm">GLM/智谱AI</a><br>
-      • <a href="./support_model.md#qwen">Qwen/通义千问</a><br>
-      • <a href="./support_model.md#kimi">Kimi/月之暗面</a><br>
-      • <a href="./support_model.md#ernie">ERNIE/文心一言</a><br>
+      • <a href="./support_model.md#glm">GLM/AI</a><br>
+      • <a href="./support_model.md#qwen">Qwen/</a><br>
+      • <a href="./support_model.md#kimi">Kimi/</a><br>
+      • <a href="./support_model.md#ernie">ERNIE/</a><br>
       • <a href="./support_model.md#minimax">MiniMax</a><br>
-      • <a href="./support_model.md#spark">Spark/讯飞星火</a><br>
-      • <a href="./support_model.md#doubao">Doubao/豆包</a><br>
-      • <a href="./support_model.md#baichuan">Baichuan/百川</a><br>
-      • <a href="./support_model.md#yi">Yi/零一万物</a><br>
-      • <a href="./support_model.md#hunyuan">Hunyuan/腾讯混元</a><br>
-      • <a href="./support_model.md#sensechat">SenseChat/商汤</a>
+      • <a href="./support_model.md#spark">Spark/</a><br>
+      • <a href="./support_model.md#doubao">Doubao/</a><br>
+      • <a href="./support_model.md#baichuan">Baichuan/</a><br>
+      • <a href="./support_model.md#yi">Yi/</a><br>
+      • <a href="./support_model.md#hunyuan">Hunyuan/</a><br>
+      • <a href="./support_model.md#sensechat">SenseChat/</a>
     </td>
     <td valign="top" width="25%">
-      <b>🌍 International LLM</b><br>
+      <b>International LLM</b><br>
       • <a href="./support_model.md#gpt">GPT/OpenAI</a><br>
       • <a href="./support_model.md#claude">Claude/Anthropic</a><br>
       • <a href="./support_model.md#gemini">Gemini/Google</a><br>
@@ -225,7 +225,7 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
       • <a href="./support_model.md#fireworks">Fireworks</a>
     </td>
     <td valign="top" width="25%">
-      <b>🎨 Multimodal</b><br>
+      <b>Multimodal</b><br>
       • <a href="./support_model.md#qwen-vl">Qwen-VL</a><br>
       • <a href="./support_model.md#glm-4v">GLM-4V</a><br>
       • <a href="./support_model.md#gpt-4v">GPT-4V</a><br>
@@ -242,29 +242,29 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
   </tr>
 </table>
 
-### 🏢 API Aggregators (中转站)
+### API Aggregators ()
 
 <table align="center">
   <tr>
     <td valign="top" width="50%">
-      <b>🇨🇳 Domestic Aggregators</b><br>
+      <b>Domestic Aggregators</b><br>
       • <a href="./support_model.md#qiniu-ai">七牛云 AI</a> - 中国版 OpenRouter<br>
       • <a href="./support_model.md#ppio">PPIO 派欧云</a> - 一站式 AI 云服务<br>
       • <a href="./support_model.md#coreshub">基石智算</a> - 青云科技 AI 算力<br>
       • <a href="./support_model.md#ucloud">UCloud 优刻得</a> - 孔明智算平台<br>
-      • <a href="./support_model.md#kuaishou">快手万擎</a> - KAT-Coder 编程模型<br>
-      • <a href="./support_model.md#ksyun">金山云星流</a> - AI 训推全流程<br>
+      • <a href="./support_model.md#kuaishou-vanchin">快手万擎</a> - KAT-Coder 编程模型<br>
+      • <a href="./support_model.md#ksyun-starflow">金山云星流</a> - AI 训推全流程<br>
       • <a href="./support_model.md#infinigence">无问芯穹</a> - 异构算力集群<br>
-      • <a href="./support_model.md#lanyun">蓝耘元生代</a> - 高性能推理<br>
-      • <a href="./support_model.md#gitee">模力方舟</a> - Gitee AI 广场<br>
-      • <a href="./support_model.md#paratera">并行智算云</a> - 模型广场<br>
-      • <a href="./support_model.md#volcengine">火山方舟</a> - 字节 MaaS<br>
+      • <a href="./support_model.md#lanyun-maas">蓝耘元生代</a> - 高性能推理<br>
+      • <a href="./support_model.md#gitee-moark">模力方舟</a> - Gitee AI 广场<br>
+      • <a href="./support_model.md#paratera-ai">并行智算云</a> - 模型广场<br>
+      • <a href="./support_model.md#volcengine-ark">火山方舟</a> - 字节 MaaS<br>
       • <a href="./support_model.md#sophnet">SophNet</a> - 算能科技<br>
       • <a href="./support_model.md#siliconflow">SiliconFlow</a> - 50+ 开源模型<br>
-      • <a href="./support_model.md#ai302">302.AI</a> - 一站式 AI 服务
+      • <a href="./support_model.md#ai302">302.AI</a> - 一站式 AI 服务 
     </td>
     <td valign="top" width="50%">
-      <b>🌍 International Aggregators</b><br>
+      <b>International Aggregators</b><br>
       • <a href="./support_model.md#openrouter">OpenRouter</a> - 200+ 模型统一访问<br>
       • <a href="./support_model.md#poe">Poe</a> - 多模型聚合平台<br>
       • <a href="./support_model.md#groq">Groq</a> - 极速推理引擎<br>
@@ -275,16 +275,16 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
       • <a href="./support_model.md#perplexity">Perplexity</a> - 搜索增强 LLM<br>
       • <a href="./support_model.md#mistral">Mistral AI</a> - 欧洲领先模型<br>
       • <a href="./support_model.md#cohere">Cohere</a> - 企业级 NLP<br>
-      • <a href="./support_model.md#ai21">AI21 Labs</a> - Jurassic 模型
+      • <a href="./support_model.md#ai21">AI21 Labs</a> - Jurassic 模型 
     </td>
   </tr>
 </table>
 
-📖 **Full model documentation**: [support_model.md](./support_model.md)
+**Full model documentation**: [support_model.md](./support_model.md)
 
 ---
 
-## �📋 Supported Providers by Modality
+## Supported Providers by Modality
 
 ### Language Models
 
@@ -327,7 +327,7 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Option 1: Environment Variables (Recommended)
 
@@ -391,7 +391,7 @@ api_key = config.get_api_key("deepseek")
 
 ---
 
-## 🧪 Testing
+## Testing
 
 All test files support direct execution with `if __name__ == "__main__"`:
 
@@ -416,7 +416,7 @@ Before running tests, set your API key in the `.env` file or modify it directly 
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how to add a new provider:
 
@@ -433,7 +433,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
-## 📊 Project Stats
+## Project Stats
 
 <div align="center">
 
@@ -443,13 +443,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Thanks to all the AI providers for their amazing APIs:
 
@@ -459,7 +459,7 @@ Thanks to all the AI providers for their amazing APIs:
 
 <div align="center">
 
-**⭐ Star us on GitHub — it motivates us a lot!**
+**Star us on GitHub — it motivates us a lot!**
 
 [Report Bug](https://github.com/username/translamate/issues) • [Request Feature](https://github.com/username/translamate/issues) • [Documentation](https://github.com/username/translamate/wiki)
 

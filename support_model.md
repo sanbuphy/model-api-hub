@@ -257,6 +257,94 @@ This document lists all supported AI models and API providers in Model API Hub.
 
 ---
 
+## Aggregator Details
+
+### 七牛云 AI {#qiniu-ai}
+- **Website**: https://www.qiniu.com/products/ai
+- **Features**: 中国版 OpenRouter，统一API架构、多模型调度、Agent+MCP服务
+- **Models**: DeepSeek, Qwen, GLM, Llama, Moonshot
+- **File**: `model_api_hub/api/aggregators/qiniu_ai.py`
+
+### PPIO 派欧云 {#ppio}
+- **Website**: https://ppio.cn/
+- **Features**: 一站式 AI 云服务，GPU算力+模型API
+- **Models**: DeepSeek-V3, DeepSeek-R1, Llama3, Qwen2.5
+- **File**: `model_api_hub/api/aggregators/ppio.py`
+
+### 基石智算 {#coreshub}
+- **Website**: https://www.qingcloud.com/products/ai
+- **Features**: 青云科技 AI 算力云平台
+- **Models**: DeepSeek, Qwen, GLM, Kimi, Llama
+- **File**: `model_api_hub/api/aggregators/coreshub.py`
+
+### UCloud 优刻得 {#ucloud}
+- **Website**: https://www.ucloud.cn/site/active/agi.html
+- **Features**: 孔明智算平台，模型微调+推理
+- **Models**: DeepSeek, Qwen, ChatGLM, Llama
+- **File**: `model_api_hub/api/aggregators/ucloud_ai.py`
+
+### 快手万擎 {#kuaishou-vanchin}
+- **Website**: https://vanchin.kuaishou.com/
+- **Features**: KAT-Coder 编程模型，代码生成优化
+- **Models**: KAT-Coder, Kwai-Yii
+- **File**: `model_api_hub/api/aggregators/kuaishou_vanchin.py`
+
+### 金山云星流 {#ksyun-starflow}
+- **Website**: https://www.ksyun.com/product/ai
+- **Features**: AI 训推全流程平台
+- **Models**: DeepSeek, Qwen, ChatGLM
+- **File**: `model_api_hub/api/aggregators/ksyun_starflow.py`
+
+### 无问芯穹 {#infinigence}
+- **Website**: https://www.infinigence.com/
+- **Features**: 异构算力集群，多芯片支持
+- **Models**: Llama, Qwen, Baichuan, ChatGLM
+- **File**: `model_api_hub/api/aggregators/infinigence.py`
+
+### 蓝耘元生代 {#lanyun-maas}
+- **Website**: https://www.lanyun.net/
+- **Features**: 高性能大模型推理服务
+- **Models**: DeepSeek, Qwen, GLM, Llama
+- **File**: `model_api_hub/api/aggregators/lanyun_maas.py`
+
+### 模力方舟 {#gitee-moark}
+- **Website**: https://ai.gitee.com/
+- **Features**: Gitee AI 模型广场，开源模型托管
+- **Models**: Qwen, ChatGLM, Llama, BERT
+- **File**: `model_api_hub/api/aggregators/gitee_moark.py`
+
+### 并行智算云 {#paratera-ai}
+- **Website**: https://ai.paratera.com/
+- **Features**: 模型广场+API服务，科研算力支持
+- **Models**: DeepSeek, Qwen, Llama, ChatGLM
+- **File**: `model_api_hub/api/aggregators/paratera_ai.py`
+
+### 火山方舟 {#volcengine-ark}
+- **Website**: https://www.volcengine.com/product/ark
+- **Features**: 字节跳动 MaaS 平台，模型精调+推理
+- **Models**: Doubao, DeepSeek, Qwen, Llama
+- **File**: `model_api_hub/api/aggregators/volcengine_ark.py`
+
+### SophNet {#sophnet}
+- **Website**: https://sophnet.com/
+- **Features**: 算能科技 DeepSeek 极速版
+- **Models**: DeepSeek-R1-Distill, DeepSeek-V3
+- **File**: `model_api_hub/api/aggregators/sophnet.py`
+
+### SiliconFlow {#siliconflow}
+- **Website**: https://siliconflow.cn/
+- **Features**: 50+ 开源模型，高性价比
+- **Models**: DeepSeek-V3, Qwen2.5, GLM-4, Llama3.1
+- **File**: `model_api_hub/api/aggregators/siliconflow.py`
+
+### 302.AI {#ai302}
+- **Website**: https://302.ai/
+- **Features**: 一站式 AI 服务，Bot+API
+- **Models**: GPT-4, Claude, Gemini, 国内大模型
+- **File**: `model_api_hub/api/aggregators/ai302.py`
+
+---
+
 ## Model Details
 
 ### GLM-4.7-Flash
