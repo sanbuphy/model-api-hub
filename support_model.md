@@ -343,6 +343,48 @@ This document lists all supported AI models and API providers in Model API Hub.
 - **Models**: GPT-4, Claude, Gemini, 国内大模型
 - **File**: `model_api_hub/api/aggregators/ai302.py`
 
+### 即梦 (Dreamina) {#dreamina}
+- **Website**: https://jimeng.jianying.com/
+- **Features**: 字节跳动 AI 创作平台，文生图、文生视频
+- **Models**: Dreamina Image, Dreamina Video
+- **File**: `model_api_hub/api/aggregators/dreamina.py`
+
+### ModelScope (魔搭社区) {#modelscope}
+- **Website**: https://www.modelscope.cn/
+- **Features**: 阿里开源模型平台，模型即服务
+- **Models**: Qwen, ChatGLM, Llama, BERT 等开源模型
+- **File**: `model_api_hub/api/aggregators/modelscope.py`
+
+### 百度 AI Studio {#baidu-aistudio}
+- **Website**: https://aistudio.baidu.com/
+- **Features**: 飞桨 AI 开发平台，模型训练与推理
+- **Models**: ERNIE-Bot, ERNIE-Vision, ERNIE-Image
+- **File**: `model_api_hub/api/aggregators/baidu_aistudio.py`
+
+### 海螺AI (Hailuo) {#hailuo}
+- **Website**: https://hailuoai.video/
+- **Features**: MiniMax 视频生成平台，TTS、声音克隆
+- **Models**: Hailuo Video, Hailuo TTS, Voice Clone
+- **File**: `model_api_hub/api/aggregators/hailuo.py`
+
+### 可灵AI (Kling) {#kling}
+- **Website**: https://klingai.com/
+- **Features**: 快手视频生成平台，文生视频、图生视频
+- **Models**: Kling Video, Kling Image
+- **File**: `model_api_hub/api/aggregators/kling.py`
+
+### 商汤日日新 (SenseTime) {#sensetime}
+- **Website**: https://platform.sensetime.com/
+- **Features**: 商汤大模型平台，多模态能力
+- **Models**: SenseChat, SenseChat-Vision, SenseMirage, SenseRave
+- **File**: `model_api_hub/api/aggregators/sensetime.py`
+
+### 腾讯混元 (Tencent Hunyuan) {#tencent-hunyuan}
+- **Website**: https://hunyuan.tencent.com/
+- **Features**: 腾讯大模型平台，多模态能力
+- **Models**: Hunyuan-Pro, Hunyuan-Vision, Hunyuan-Image
+- **File**: `model_api_hub/api/aggregators/tencent_hunyuan.py`
+
 ---
 
 ## Model Details

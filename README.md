@@ -261,7 +261,14 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
       • <a href="./support_model.md#volcengine-ark">火山方舟</a> - 字节 MaaS<br>
       • <a href="./support_model.md#sophnet">SophNet</a> - 算能科技<br>
       • <a href="./support_model.md#siliconflow">SiliconFlow</a> - 50+ 开源模型<br>
-      • <a href="./support_model.md#ai302">302.AI</a> - 一站式 AI 服务 
+      • <a href="./support_model.md#ai302">302.AI</a> - 一站式 AI 服务<br>
+      • <a href="./support_model.md#dreamina">即梦</a> - 字节 AI 创作平台<br>
+      • <a href="./support_model.md#modelscope">ModelScope</a> - 魔搭模型广场<br>
+      • <a href="./support_model.md#baidu-aistudio">百度 AI Studio</a> - 飞桨开发平台<br>
+      • <a href="./support_model.md#hailuo">海螺AI</a> - MiniMax 视频生成<br>
+      • <a href="./support_model.md#kling">可灵AI</a> - 快手视频生成<br>
+      • <a href="./support_model.md#sensetime">商汤日日新</a> - 多模态大模型<br>
+      • <a href="./support_model.md#tencent-hunyuan">腾讯混元</a> - 腾讯大模型
     </td>
     <td valign="top" width="50%">
       <b>International Aggregators</b><br>
@@ -275,7 +282,7 @@ Model API Hub supports **500+ AI models** across **25+ providers** and **5 modal
       • <a href="./support_model.md#perplexity">Perplexity</a> - 搜索增强 LLM<br>
       • <a href="./support_model.md#mistral">Mistral AI</a> - 欧洲领先模型<br>
       • <a href="./support_model.md#cohere">Cohere</a> - 企业级 NLP<br>
-      • <a href="./support_model.md#ai21">AI21 Labs</a> - Jurassic 模型 
+      • <a href="./support_model.md#ai21">AI21 Labs</a> - Jurassic 模型
     </td>
   </tr>
 </table>

@@ -16,6 +16,13 @@ API Aggregators / API中转站
 - paratera_ai - 并行智算云
 - volcengine_ark - 火山方舟 (字节跳动)
 - sophnet - SophNet (算能科技)
+- dreamina - 即梦 (字节跳动)
+- modelscope - ModelScope (魔搭社区)
+- baidu_aistudio - 百度 AI Studio
+- hailuo - 海螺AI (MiniMax)
+- kling - 可灵AI (快手)
+- sensetime - 商汤日日新
+- tencent_hunyuan - 腾讯混元
 
 国际平台 (International):
 - openrouter - OpenRouter
@@ -46,6 +53,13 @@ from .gitee_moark import chat as gitee_moark_chat, create_client as gitee_moark_
 from .paratera_ai import chat as paratera_ai_chat, create_client as paratera_ai_client
 from .volcengine_ark import chat as volcengine_ark_chat, create_client as volcengine_ark_client
 from .sophnet import chat as sophnet_chat, create_client as sophnet_client
+from .dreamina import text_to_image as dreamina_text_to_image, text_to_video as dreamina_text_to_video
+from .modelscope import chat as modelscope_chat, text_to_image as modelscope_text_to_image, get_embedding as modelscope_embedding
+from .baidu_aistudio import chat as baidu_aistudio_chat, analyze_image as baidu_aistudio_analyze_image, text_to_image as baidu_aistudio_text_to_image
+from .hailuo import text_to_video as hailuo_text_to_video, text_to_speech as hailuo_tts, clone_voice as hailuo_clone_voice
+from .kling import text_to_video as kling_text_to_video, image_to_video as kling_image_to_video, text_to_image as kling_text_to_image
+from .sensetime import chat as sensetime_chat, analyze_image as sensetime_analyze_image, text_to_image as sensetime_text_to_image, text_to_video as sensetime_text_to_video
+from .tencent_hunyuan import chat as tencent_hunyuan_chat, analyze_image as tencent_hunyuan_analyze_image, text_to_image as tencent_hunyuan_text_to_image
 
 # 国际平台
 from .openrouter import chat as openrouter_chat, create_client as openrouter_client
@@ -76,6 +90,14 @@ __all__ = [
     "paratera_ai_chat", "paratera_ai_client",
     "volcengine_ark_chat", "volcengine_ark_client",
     "sophnet_chat", "sophnet_client",
+    # 新增国内平台
+    "dreamina_text_to_image", "dreamina_text_to_video",
+    "modelscope_chat", "modelscope_text_to_image", "modelscope_embedding",
+    "baidu_aistudio_chat", "baidu_aistudio_analyze_image", "baidu_aistudio_text_to_image",
+    "hailuo_text_to_video", "hailuo_tts", "hailuo_clone_voice",
+    "kling_text_to_video", "kling_image_to_video", "kling_text_to_image",
+    "sensetime_chat", "sensetime_analyze_image", "sensetime_text_to_image", "sensetime_text_to_video",
+    "tencent_hunyuan_chat", "tencent_hunyuan_analyze_image", "tencent_hunyuan_text_to_image",
     
     # 国际平台
     "openrouter_chat", "openrouter_client",
