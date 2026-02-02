@@ -9,23 +9,25 @@ from pathlib import Path
 readme_file = Path(__file__).parent / "README.md"
 long_description = readme_file.read_text(encoding="utf-8") if readme_file.exists() else ""
 
-# Read requirements
-requirements_file = Path(__file__).parent / "requirements.txt"
+# Define requirements directly
 requirements = [
-    line.strip()
-    for line in requirements_file.read_text(encoding="utf-8").splitlines()
-    if line.strip() and not line.startswith("#")
+    "requests>=2.31.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "Pillow>=10.0.0",
+    "pydub>=0.25.0",
 ]
 
 setup(
     name="model-api-hub",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="sanbu",
+    author_email="physicoada@gmail.com",
     description="Unified Python interface for multiple AI model APIs",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/model-api-hub",
+    url="https://github.com/sanbuphy/model-api-hub",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",

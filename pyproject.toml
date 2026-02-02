@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "sanbu", email = "physicoada@gmail.com"}
 ]
 keywords = ["ai", "api", "llm", "vlm", "image-generation", "audio", "video"]
 classifiers = [
@@ -42,9 +42,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/model-api-hub"
-Repository = "https://github.com/yourusername/model-api-hub"
-Issues = "https://github.com/yourusername/model-api-hub/issues"
+Homepage = "https://github.com/sanbuphy/model-api-hub"
+Repository = "https://github.com/sanbuphy/model-api-hub"
+Issues = "https://github.com/sanbuphy/model-api-hub/issues"
 
 [project.scripts]
 model-api-hub = "model_api_hub.cli:main"
