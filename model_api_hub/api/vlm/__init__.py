@@ -7,6 +7,7 @@ Available providers:
 - dashscope_vlm - Alibaba Qwen-VL
 - zhipuai_vlm - ZhipuAI GLM-4V
 - xunfei_vlm - Xunfei Spark Vision
+- modelscope_vlm - ModelScope Vision models
 """
 
 from .openai_vlm import analyze_image as openai_analyze_image
@@ -14,6 +15,7 @@ from .gemini_vlm import analyze_image as gemini_analyze_image
 from .dashscope_vlm import analyze_image as dashscope_analyze_image
 from .zhipuai_vlm import analyze_image as zhipuai_analyze_image
 from .xunfei_vlm import analyze_image as xunfei_analyze_image
+from .modelscope_vlm import analyze_image as modelscope_analyze_image
 
 __all__ = [
     "openai_analyze_image",
@@ -21,4 +23,5 @@ __all__ = [
     "dashscope_analyze_image",
     "zhipuai_analyze_image",
     "xunfei_analyze_image",
+    "modelscope_analyze_image",
 ]
