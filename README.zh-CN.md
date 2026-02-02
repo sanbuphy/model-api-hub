@@ -7,7 +7,7 @@
 **一行代码，访问 100+ AI 模型**
 
 [![GitHub release](https://img.shields.io/github/v/release/username/translamate)](https://github.com/username/translamate/releases)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/username/translamate/ci.yml)](https://github.com/username/translamate/actions)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/model-api-hub.svg)](https://badge.fury.io/py/model-api-hub)
@@ -488,7 +488,7 @@ model_api_hub/
 
 ## 📄 许可证
 
-**MIT 许可证** - 详见 [LICENSE](LICENSE) 文件。
+**Apache License 2.0** - 详见 [LICENSE](LICENSE) 文件。
 
 ---
 

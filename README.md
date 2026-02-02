@@ -7,7 +7,7 @@
 **One Line of Code, Access to 100+ AI Models**
 
 [![GitHub release](https://img.shields.io/github/v/release/username/translamate)](https://github.com/username/translamate/releases)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![GitHub Actions](https://img.shields.io/github/actions/workflow/status/username/translamate/ci.yml)](https://github.com/username/translamate/actions)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyPI version](https://badge.fury.io/py/model-api-hub.svg)](https://badge.fury.io/py/model-api-hub)
@@ -476,7 +476,7 @@ See [llm.txt](llm.txt) for detailed implementation guide.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file.
+Apache License 2.0 - see [LICENSE](LICENSE) file.
 
 ---
 
