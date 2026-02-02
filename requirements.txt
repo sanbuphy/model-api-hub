@@ -1,0 +1,17 @@
+# HTTP requests library
+requests>=2.31.0
+
+# OpenAI-compatible API client
+openai>=1.0.0
+
+# For environment variable loading
+python-dotenv>=1.0.0
+
+# For YAML configuration
+pyyaml>=6.0
+
+# For image processing
+Pillow>=10.0.0
+
+# For audio processing (optional)
+pydub>=0.25.0
