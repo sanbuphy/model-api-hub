@@ -158,37 +158,179 @@ audio = synthesize("Hello, world!", voice="alloy", output_path="hello.mp3")
 
 ---
 
-## Supported Providers
+## Supported Models
 
-### LLM Providers (18+)
+### Language Models (LLM)
 
-| Provider | Import | Default Model | Streaming |
-|----------|--------|---------------|-----------|
-| **OpenAI** | `openai_chat` | gpt-4o | ✅ |
-| **Anthropic** | `anthropic_chat` | claude-sonnet-4-5 | ✅ |
-| **DeepSeek** | `deepseek_chat` | deepseek-chat | ✅ |
-| **Google Gemini** | `gemini_chat` | gemini-pro | ✅ |
-| **Kimi** | `kimi_chat` | moonshot-v1-128k | ✅ |
-| **ZhipuAI** | `zhipuai_chat` | glm-4-plus | ✅ |
-| **SiliconFlow** | `siliconflow_chat` | DeepSeek-V3 | ✅ |
-| **MiniMax** | `minimax_chat` | abab6.5s-chat | ✅ |
-| **Baidu Yiyan** | `yiyan_chat` | ernie-4.0-8k | ✅ |
-| **Alibaba DashScope** | `dashscope_chat` | qwen-max | ✅ |
-| **ModelScope** | `modelscope_chat` | Qwen2.5-72B | ✅ |
-| **Xunfei Spark** | `xunfei_chat` | Spark-v3.5 | ✅ |
-| **Groq** | `groq_chat` | llama3-70b | ✅ |
-| **Together AI** | `together_chat` | Llama-3-70b | ✅ |
-| **Mistral** | `mistral_chat` | mistral-large | ✅ |
-| **Cohere** | `cohere_chat` | command-r-plus | ✅ |
-| **Perplexity** | `perplexity_chat` | sonar-pro | ✅ |
-| **Azure OpenAI** | `azure_chat` | gpt-4o | ✅ |
+<table>
+  <tr>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#deepseek-chat">DeepSeek-Chat</a><br>
+      • <a href="./support_model.md#deepseek-r1-distill">DeepSeek-R1</a><br>
+      • <a href="./support_model.md#deepseek-coder-v2">DeepSeek-Coder-V2</a><br>
+      • <a href="./support_model.md#deepseek-深度求索">DeepSeek-V3</a><br>
+      • <a href="./support_model.md#gpt-4o">GPT-4o</a><br>
+      • <a href="./support_model.md#gpt-4o-mini">GPT-4o-mini</a><br>
+      • <a href="./support_model.md#gpt-4-turbo">GPT-4-Turbo</a><br>
+      • <a href="./support_model.md#claude-sonnet-4-5">Claude-Sonnet-4.5</a><br>
+      • <a href="./support_model.md#claude-opus-4">Claude-Opus-4</a><br>
+      • <a href="./support_model.md#gemini-pro">Gemini-Pro</a><br>
+      • <a href="./support_model.md#gemini-flash">Gemini-Flash</a><br>
+      • <a href="./support_model.md#glm-47-flash">GLM-4.7-Flash</a><br>
+      • <a href="./support_model.md#glm-4">GLM-4</a><br>
+      • <a href="./support_model.md#glm-4-plus">GLM-4-Plus</a><br>
+      • <a href="./support_model.md#glm-45-air">GLM-4.5-Air</a><br>
+      • <a href="./support_model.md#glm-41-thinking">GLM-4.1-Thinking</a><br>
+      • <a href="./support_model.md#moonshot-v1-128k">Moonshot-v1-128k</a><br>
+      • <a href="./support_model.md#moonshot-v1-32k">Moonshot-v1-32k</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#kimi">Kimi-K2</a><br>
+      • <a href="./support_model.md#abab65s-chat">MiniMax-ABAB6.5s</a><br>
+      • <a href="./support_model.md#minimax-m2">MiniMax-M2</a><br>
+      • <a href="./support_model.md#ernie-4">ERNIE-4.0</a><br>
+      • <a href="./support_model.md#ernie-45">ERNIE-4.5</a><br>
+      • <a href="./support_model.md#qwen-max">Qwen-Max</a><br>
+      • <a href="./support_model.md#qwen-plus">Qwen-Plus</a><br>
+      • <a href="./support_model.md#qwen-turbo">Qwen-Turbo</a><br>
+      • <a href="./support_model.md#qwen25">Qwen2.5</a><br>
+      • <a href="./support_model.md#qwen25-coder">Qwen2.5-Coder</a><br>
+      • <a href="./support_model.md#qwen3">Qwen3</a><br>
+      • <a href="./support_model.md#qwen2">Qwen2</a><br>
+      • <a href="./support_model.md#qwen-15">Qwen 1.5</a><br>
+      • <a href="./support_model.md#llama4">Llama4</a><br>
+      • <a href="./support_model.md#llama31-8b-instruct">Llama3.1</a><br>
+      • <a href="./support_model.md#llama3-70b">Llama3-70B</a><br>
+      • <a href="./support_model.md#gemma3">Gemma3</a><br>
+      • <a href="./support_model.md#gemma-2-9b-it">Gemma-2</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#mistral-large">Mistral-Large</a><br>
+      • <a href="./support_model.md#mixtral-8x22b">Mixtral-8x22B</a><br>
+      • <a href="./support_model.md#command-r-plus">Command-R-Plus</a><br>
+      • <a href="./support_model.md#internlm3">InternLM3</a><br>
+      • <a href="./support_model.md#internlm">InternLM</a><br>
+      • <a href="./support_model.md#internlm2-20b">InternLM2-20B</a><br>
+      • <a href="./support_model.md#baichuan-百川智能">Baichuan</a><br>
+      • <a href="./support_model.md#yi-零一万物">Yi 零一万物</a><br>
+      • <a href="./support_model.md#yuan20">Yuan2.0</a><br>
+      • <a href="./support_model.md#yuan20-m32">Yuan2.0-M32</a><br>
+      • <a href="./support_model.md#hunyuan-a13b-instruct">Hunyuan-A13B</a><br>
+      • <a href="./support_model.md#hunyuan3d-2">Hunyuan3D-2</a><br>
+      • <a href="./support_model.md#spark-v35">Spark-v3.5</a><br>
+      • <a href="./support_model.md#phi4">Phi4</a><br>
+      • <a href="./support_model.md#phi-3">Phi-3</a><br>
+      • <a href="./support_model.md#minicpm">MiniCPM</a><br>
+      • <a href="./support_model.md#characterglm-6b">CharacterGLM</a>
+    </td>
+  </tr>
+</table>
 
-### Other Modalities
+### Vision-Language Models (VLM)
 
-- **VLM**: OpenAI, Gemini, Qwen-VL, GLM-4V
-- **Image**: SiliconFlow, Stability, Recraft, Baidu
-- **Audio**: OpenAI, ElevenLabs, Azure, Minimax
-- **Video**: Runway, Luma, Dreamina
+<table>
+  <tr>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#gpt-4o-vision">GPT-4o-Vision</a><br>
+      • <a href="./support_model.md#gpt-4v">GPT-4V</a><br>
+      • <a href="./support_model.md#gemini-pro-vision">Gemini-Pro-Vision</a><br>
+      • <a href="./support_model.md#qwen3-vl-4b-instruct">Qwen3-VL</a><br>
+      • <a href="./support_model.md#qwen2-vl">Qwen2-VL</a><br>
+      • <a href="./support_model.md#qwen-vl-plus">Qwen-VL-Plus</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#glm-4v">GLM-4V</a><br>
+      • <a href="./support_model.md#minicpm-o-2_6">MiniCPM-o</a><br>
+      • <a href="./support_model.md#yi-vl">Yi-VL</a><br>
+      • <a href="./support_model.md#internvl">InternVL</a><br>
+      • <a href="./support_model.md#deepseek-vl">DeepSeek-VL</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#spatiallm">SpatialLM</a><br>
+      • <a href="./support_model.md#llava">LLaVA</a><br>
+      • <a href="./support_model.md#cogvlm">CogVLM</a><br>
+      • <a href="./support_model.md#bluelm-vivo-蓝心大模型">BlueLM-Vision</a>
+    </td>
+  </tr>
+</table>
+
+### Image Generation Models
+
+<table>
+  <tr>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#dall-e-3">DALL-E 3</a><br>
+      • <a href="./support_model.md#dall-e-2">DALL-E 2</a><br>
+      • <a href="./support_model.md#kolors">Kolors</a><br>
+      • <a href="./support_model.md#stable-diffusion-xl">Stable Diffusion XL</a><br>
+      • <a href="./support_model.md#stable-diffusion-3">Stable Diffusion 3</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#recraft-v3">Recraft-v3</a><br>
+      • <a href="./support_model.md#wanx">Wanx</a><br>
+      • <a href="./support_model.md#ernie-vilg">ERNIE-ViLG</a><br>
+      • <a href="./support_model.md#jimeng">Jimeng (Dreamina)</a><br>
+      • <a href="./support_model.md#cogview">CogView</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#hunyuan-image">Hunyuan-Image</a><br>
+      • <a href="./support_model.md#playground-v2">Playground-v2</a><br>
+      • <a href="./support_model.md#kandinsky">Kandinsky</a><br>
+      • <a href="./support_model.md#deepfloyd">DeepFloyd IF</a>
+    </td>
+  </tr>
+</table>
+
+### Audio Models
+
+<table>
+  <tr>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#whisper">Whisper</a><br>
+      • <a href="./support_model.md#whisper-large-v3">Whisper-Large-v3</a><br>
+      • <a href="./support_model.md#tts-1">TTS-1</a><br>
+      • <a href="./support_model.md#tts-1-hd">TTS-1-HD</a><br>
+      • <a href="./support_model.md#elevenlabs-multilingual-v2">ElevenLabs-Multilingual-v2</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#elevenlabs-flash">ElevenLabs-Flash</a><br>
+      • <a href="./support_model.md#azure-tts">Azure-TTS</a><br>
+      • <a href="./support_model.md#azure-speech">Azure-Speech</a><br>
+      • <a href="./support_model.md#minimax-tts">MiniMax-TTS</a><br>
+      • <a href="./support_model.md#baidu-tts">Baidu-TTS</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#qwen-audio">Qwen-Audio</a><br>
+      • <a href="./support_model.md#chattts">ChatTTS</a><br>
+      • <a href="./support_model.md#fish-speech">Fish-Speech</a><br>
+      • <a href="./support_model.md# GPT-SoVITS">GPT-SoVITS</a>
+    </td>
+  </tr>
+</table>
+
+### Video Generation Models
+
+<table>
+  <tr>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#runway-gen3">Runway-Gen3</a><br>
+      • <a href="./support_model.md#runway-gen2">Runway-Gen2</a><br>
+      • <a href="./support_model.md#luma-dream-machine">Luma-Dream-Machine</a><br>
+      • <a href="./support_model.md#luma-genie">Luma-Genie</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#pika">Pika</a><br>
+      • <a href="./support_model.md#stable-video-diffusion">Stable-Video-Diffusion</a><br>
+      • <a href="./support_model.md#jimeng-video">Jimeng-Video</a><br>
+      • <a href="./support_model.md#cogvideo">CogVideo</a>
+    </td>
+    <td valign="top" width="33%">
+      • <a href="./support_model.md#videocrafter">VideoCrafter</a><br>
+      • <a href="./support_model.md#modelscope-video">ModelScope-Video</a><br>
+      • <a href="./support_model.md#animatediff">AnimateDiff</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
