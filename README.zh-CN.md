@@ -84,7 +84,7 @@ print(response)
 #### 同步对话
 
 ```python
-from model_api_hub import deepseek_chat, kimi_chat, siliconflow_chat
+from model_api_hub import deepseek_chat, kimi_chat, siliconflow_chat, stepfun_chat
 
 # DeepSeek
 response = deepseek_chat(
@@ -100,6 +100,16 @@ response = kimi_chat(
 
 # SiliconFlow - 访问 50+ 模型
 response = siliconflow_chat("你好！", model="deepseek-ai/DeepSeek-V3")
+
+# StepFun - OpenAI 兼容接口
+response = stepfun_chat(
+    "你好，请介绍一下阶跃星辰的人工智能！",
+    system_prompt=(
+        "你是由阶跃星辰提供的AI聊天助手，你擅长中文、英文以及多种其他语言的对话。"
+        "在保证用户数据安全的前提下，你能对用户的问题和请求作出快速和精准的回答。"
+        "同时，你的回答和建议应该拒绝黄赌毒、暴力恐怖主义的内容。"
+    ),
+)
 ```
 
 #### 流式对话
@@ -387,6 +397,7 @@ MISTRAL_API_KEY=...
 COHERE_API_KEY=...
 PERPLEXITY_API_KEY=pplx-...
 AZURE_OPENAI_API_KEY=...
+STEP_API_KEY=...
 
 # 其他服务
 ELEVENLABS_API_KEY=...

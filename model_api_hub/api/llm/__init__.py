@@ -7,6 +7,7 @@ Available providers:
 - gemini_llm - Google Gemini models
 - deepseek_llm - DeepSeek models
 - kimi_llm - Moonshot Kimi models
+- stepfun_llm - StepFun OpenAI-compatible models
 - zhipuai_llm - ZhipuAI GLM models
 - siliconflow_llm - SiliconFlow models
 - minimax_llm - MiniMax models
@@ -64,6 +65,13 @@ from .kimi_llm import (
 from .zhipuai_llm import (
     chat as zhipuai_chat,
     create_client as zhipuai_client
+)
+
+# StepFun
+from .stepfun_llm import (
+    chat as stepfun_chat,
+    chat_stream as stepfun_chat_stream,
+    create_client as stepfun_client
 )
 
 # SiliconFlow
@@ -155,6 +163,10 @@ __all__ = [
     # ZhipuAI
     "zhipuai_chat",
     "zhipuai_client",
+    # StepFun
+    "stepfun_chat",
+    "stepfun_chat_stream",
+    "stepfun_client",
     # SiliconFlow
     "siliconflow_chat",
     "siliconflow_client",

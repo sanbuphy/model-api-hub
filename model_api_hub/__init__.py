@@ -30,6 +30,7 @@ from model_api_hub.api.llm.together_llm import chat as together_chat
 from model_api_hub.api.llm.cohere_llm import chat as cohere_chat
 from model_api_hub.api.llm.mistral_llm import chat as mistral_chat
 from model_api_hub.api.llm.modelscope_llm import chat as modelscope_chat
+from model_api_hub.api.llm.stepfun_llm import chat as stepfun_chat
 
 # LLM - Streaming
 from model_api_hub.api.llm.deepseek_llm import chat_stream as deepseek_chat_stream
@@ -95,6 +96,7 @@ __all__ = [
     "cohere_chat",
     "mistral_chat",
     "modelscope_chat",
+    "stepfun_chat",
 
     # LLM - Streaming
     "deepseek_chat_stream",

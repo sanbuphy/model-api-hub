@@ -31,6 +31,7 @@ from model_api_hub.api.llm.cohere_llm import chat as cohere_chat
 from model_api_hub.api.llm.xunfei_llm import chat as xunfei_chat
 from model_api_hub.api.llm.perplexity_llm import chat as perplexity_chat
 from model_api_hub.api.llm.azure_openai_llm import chat as azure_chat
+from model_api_hub.api.llm.stepfun_llm import chat as stepfun_chat
 
 
 def test_deepseek_create_client():
@@ -220,6 +221,27 @@ def test_openai_chat(api_key=None):
         print(f"✅ OpenAI chat passed - Response: {response[:50]}...")
     except Exception as e:
         print(f"❌ OpenAI chat failed: {e}")
+
+
+def test_stepfun_chat(api_key=None):
+    """Test StepFun chat."""
+    # Prefer official STEP_API_KEY, but also support STEPFUN_API_KEY
+    api_key = api_key or os.getenv("STEP_API_KEY") or os.getenv("STEPFUN_API_KEY")
+    if not api_key:
+        print("⏭️  [Skip] StepFun chat - No API key provided")
+        return
+
+    print("\n[Test] StepFun chat...")
+    try:
+        response = stepfun_chat(
+            prompt="Say 'test passed' in one word.",
+            api_key=api_key
+        )
+        assert response is not None, "Response should not be None"
+        assert len(response) > 0, "Response should not be empty"
+        print(f"✅ StepFun chat passed - Response: {response[:50]}...")
+    except Exception as e:
+        print(f"❌ StepFun chat failed: {e}")
 
 
 def test_anthropic_chat(api_key=None):
@@ -419,6 +441,7 @@ def main():
     test_modelscope_chat()
     test_dashscope_chat()
     test_openai_chat()
+    test_stepfun_chat()
     test_anthropic_chat()
     test_gemini_chat()
     test_groq_chat()

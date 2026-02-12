@@ -63,12 +63,26 @@ def get_api_key(provider: str, env_path: Optional[str] = None) -> str:
     """
     load_env(env_path)
 
+    # Provider aliases for official/recommended env var names
+    provider_aliases = {
+        "stepfun": ["step"],
+    }
+
     # Try different naming conventions
     env_var_names = [
         f"{provider.upper()}_API_KEY",
         f"{provider.upper()}_KEY",
         provider.upper(),
     ]
+
+    # Add aliases if they exist
+    if provider in provider_aliases:
+        for alias in provider_aliases[provider]:
+            env_var_names.extend([
+                f"{alias.upper()}_API_KEY",
+                f"{alias.upper()}_KEY",
+                alias.upper(),
+            ])
 
     for env_var in env_var_names:
         api_key = os.getenv(env_var)
